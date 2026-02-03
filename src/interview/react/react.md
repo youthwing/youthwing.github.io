@@ -89,7 +89,7 @@ marker.setMap(map);
 ```jsx
 const Header = () => {
 	return (
-		<Jumbotron style={{ backgroundColor: 'orange' }}>
+		<Jumbotron style={% raw %}{{ backgroundColor: 'orange' }}{% endraw %}>
 			<h1>TODO App</h1>
 		</Jumbotron>
 	);

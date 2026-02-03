@@ -53,7 +53,7 @@ class Test extends Component {
     return (
      <div>
        <div style={div1}>123</div>
-       <div style={{backgroundColor:"red"}}>
+       <div style={% raw %}{{backgroundColor:"red"}}{% endraw %}>
      </div>
     );
   }
@@ -206,7 +206,7 @@ class Test extends Component {
 		return (
 			<div>
 				<SelfLink title="People's Republic of China">app.js</SelfLink>
-				<SelfButton color="palevioletred" style={{ color: 'pink' }} src={fist}>
+				<SelfButton color="palevioletred" style={% raw %}{{ color: 'pink' }}{% endraw %} src={fist}>
 					SelfButton
 				</SelfButton>
 			</div>

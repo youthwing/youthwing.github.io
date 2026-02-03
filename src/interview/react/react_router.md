@@ -108,9 +108,9 @@ export default function App() {
 如下：
 
 ```js
-<NavLink to="/" exact activeStyle={{color: "red"}}>首页</NavLink>
-<NavLink to="/about" activeStyle={{color: "red"}}>关于</NavLink>
-<NavLink to="/profile" activeStyle={{color: "red"}}>我的</NavLink>
+<NavLink to="/" exact activeStyle={% raw %}{{color: "red"}}{% endraw %}>首页</NavLink>
+<NavLink to="/about" activeStyle={% raw %}{{color: "red"}}{% endraw %}>关于</NavLink>
+<NavLink to="/profile" activeStyle={% raw %}{{color: "red"}}{% endraw %}>我的</NavLink>
 ```
 
 如果需要实现`js`实现页面的跳转，那么可以通过下面的形式：
@@ -281,12 +281,12 @@ console.log(props.location.search);
 
 ```jsx
 <NavLink
-	to={{
+	to={% raw %}{{
 		pathname: '/detail2',
 		query: { name: 'kobe', age: 30 },
 		state: { height: 1.98, address: '洛杉矶' },
 		search: '?apikey=123'
-	}}
+	}}{% endraw %}
 >
 	详情2
 </NavLink>
