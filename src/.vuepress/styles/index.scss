@@ -1,39 +1,86 @@
-// place your custom styles here
-// a code
-//   color #fff
-
+// 极客风格自定义样式
 $text-color: #2c3e50;
-$text-color-dark: #abb2bf;
+$text-color-dark: #e6edf3;
 $navbar-height: 3.75rem;
 
-p{a{code{
-    color: $text-color;
-}}}
+// 代码块极客风格
+div[class*="language-"] {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    
+    pre {
+        border-radius: 8px;
+    }
+}
+
+// 链接样式优化
+p{a{
+    color: #00d4ff;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        border-bottom-color: #00d4ff;
+    }
+    
+    code{
+        color: $text-color;
+        background: rgba(0, 212, 255, 0.1);
+        padding: 2px 6px;
+        border-radius: 3px;
+    }
+}}
+
 td{a{code{
     color: $text-color;
 }}}
+
+// 提示容器样式
 .hint-container.details {
     border: 0.1rem solid #eee;
     background-color: #fff;
     overflow: hidden;
+    border-radius: 8px;
 }
 .hint-container.details summary {
     background-color: #eee;
 }
-html[data-theme=dark] #app {
-    p{a{code{
-        color: $text-color-dark;
-    }}}
-    td{a{code{
-        color: $text-color-dark;
-    }}}
-    .hint-container.details {
-        border: 0.1rem solid #333;
-        background-color: #0d1117;
-        overflow: hidden;
+
+// 暗色主题优化
+html[data-theme=dark] {
+    background: #0d1117;
+    
+    #app {
+        p{a{
+            color: #58a6ff;
+            
+            &:hover {
+                border-bottom-color: #58a6ff;
+            }
+            
+            code{
+                color: $text-color-dark;
+                background: rgba(88, 166, 255, 0.15);
+            }
+        }}
+        td{a{code{
+            color: $text-color-dark;
+        }}}
+        .hint-container.details {
+            border: 0.1rem solid #30363d;
+            background-color: #161b22;
+            overflow: hidden;
+        }
+        .hint-container.details summary {
+            background-color: #21262d;
+        }
     }
-    .hint-container.details summary {
-        background-color: #333;
+    
+    // 代码块暗色优化
+    div[class*="language-"] {
+        background: #161b22;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     }
 }
 
@@ -60,14 +107,47 @@ html[data-theme=dark] #app {
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* styles.css */
+/* 施工中样式 */
 .under-construction {
-    color: #ccc; /* 灰色文字 */
-    cursor: not-allowed; /* 鼠标悬停时显示“禁止”光标 */
-    pointer-events: none; /* 禁用点击事件 */
-    text-decoration: line-through; /* 文字添加删除线 */
+    color: #ccc;
+    cursor: not-allowed;
+    pointer-events: none;
+    text-decoration: line-through;
 }
 
-// .vp-feature-image {
-//     height: 18rem;
-// }
+// 极客风格：代码行号
+.line-numbers-mode {
+    .line-numbers {
+        color: #6e7681;
+        font-family: 'Fira Code', 'Consolas', monospace;
+    }
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+    
+    &:hover {
+        background: #555;
+    }
+}
+
+html[data-theme=dark] {
+    ::-webkit-scrollbar-thumb {
+        background: #30363d;
+        
+        &:hover {
+            background: #484f58;
+        }
+    }
+}

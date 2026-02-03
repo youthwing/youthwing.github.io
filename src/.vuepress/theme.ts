@@ -6,26 +6,37 @@ import sidebar from './sidebar.ts';
 
 export default hopeTheme(
 	{
-		pure: true,
+		pure: false, // 启用完整功能
 		hostname: 'https://youthwing.github.io',
 
 		author: {
 			name: 'Youthwing',
 			url: 'https://github.com/youthwing'
 		},
-		pageInfo: false,
+		pageInfo: ['Author', 'Original', 'Date', 'Category', 'Tag', 'ReadingTime'],
 
-		iconAssets: 'iconfont',
+		iconAssets: 'fontawesome-with-brands',
 
-		logo: 'assets/image/logo.png',
+		logo: 'assets/image/logo.jpg',
 
-		favicon: 'assets/image/logo.png',
+		favicon: 'assets/image/logo.jpg',
 
-		repo: 'youthwing/youthwingVue',
+		repo: 'youthwing/youthwing.github.io',
 
-		docsBranch: 'master',
+		docsBranch: 'main',
 
 		docsDir: 'src',
+
+		// 极客风格：深色模式优先
+		darkmode: 'toggle',
+		themeColor: {
+			blue: '#2196f3',
+			red: '#f26d6d',
+			green: '#3eaf7c',
+			orange: '#fb9b5f',
+			purple: '#8e44ad',
+			cyan: '#00bcd4'
+		},
 
 		// navbar
 		navbar,
@@ -40,9 +51,11 @@ export default hopeTheme(
 
 		print: false,
 
-		footer: '',
+		footer: '<a href="https://github.com/youthwing" target="_blank">GitHub</a> | Powered by VuePress & Hope Theme',
 
 		displayFooter: true,
+
+		copyright: 'Copyright © 2024-present Youthwing',
 
 		// locales: {
 		//   /**
@@ -80,8 +93,13 @@ export default hopeTheme(
 
 		blog: {
 			medias: {
-				GitHub: 'https://github.com/youthwing'
-			}
+				GitHub: 'https://github.com/youthwing',
+				Email: 'mailto:youthwing@users.noreply.github.com'
+			},
+			avatar: 'assets/image/logo.jpg',
+			roundAvatar: true,
+			description: '全栈开发者 | 技术爱好者',
+			intro: '/intro.html'
 		},
 
 		plugins: {
@@ -102,53 +120,25 @@ export default hopeTheme(
 			mdEnhance: {
 				align: true,
 				attrs: true,
-
-				// install chart.js before enabling it
-				// chart: true,
-
 				codetabs: true,
-
-				// insert component easily
-				// component: true,
-
+				component: true,
 				demo: true,
-
-				// install echarts before enabling it
-				// echarts: true,
-
 				figure: true,
-
-				// install flowchart.ts before enabling it
-				// flowchart: true,
-
-				// gfm requires mathjax-full to provide tex support
-				// gfm: true,
-
 				imgLazyload: true,
 				imgSize: true,
 				include: true,
-
 				tasklist: true,
-
-				// install katex before enabling it
-				// katex: true,
-
-				// install mathjax-full before enabling it
-				// mathjax: true,
-
 				mark: true,
-
-				// install mermaid before enabling it
-				// mermaid: true,
-
+				
+				// 极客风格：启用代码高亮和语法支持
+				gfm: true,
+				hint: true,
+				vPre: true,
+				
+				// 代码块增强
 				playground: {
 					presets: ['ts', 'vue']
 				},
-
-				// install reveal.js before enabling it
-				// revealJs: {
-				//   plugins: ["highlight", "math", "search", "notes", "zoom"],
-				// },
 
 				stylize: [
 					{
@@ -166,11 +156,17 @@ export default hopeTheme(
 				sub: true,
 				sup: true,
 				tabs: true,
-				vPre: true,
 				container: true
-
-				// install @vue/repl before enabling it
-				// vuePlayground: true,
+			},
+			
+			// 代码复制按钮
+			copyCode: {
+				showInMobile: true
+			},
+			
+			// 启用搜索
+			searchPro: {
+				indexContent: true
 			}
 
 			// uncomment these if you want a pwa
